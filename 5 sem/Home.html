@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Smart Parking System user interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-image: url('background.jpg');
+
+        }
+        header {
+           
+            color: white;
+            padding: 10px 10px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            color: #f4f4f9;
+            font-family: Agency FB;
+            
+        }
+
+        .parking-info {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 20px;
+            width: 80%;
+        }
+        .parking-spot {
+            background-color: #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .available {
+            background-color: #28a745;
+            color: white;
+        }
+        .occupied {
+            background-color: #dc3545;
+            color: white;
+        }
+        .spot-title {
+            font-weight: bold;
+        }
+        footer {
+            
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 style="font-family: Agency FB;">Smart Parking System user interface</h1>
+    <h4 style="font-family: Agency FB;" id="display"></h4>
+</header>
+
+<div class="container" style="margin-top: -70px;" >
+    <h2 style="font-size: 35px; margin-top: 50px;">Parking Space Status</h2>
+    <div class="parking-info">
+        <div class="parking-spot available">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Available</p>
+        </div>
+        <div class="parking-spot occupied">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Occupied</p>
+        </div>
+        <div class="parking-spot available">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Available</p>
+        </div>
+        <div class="parking-spot occupied">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Occupied</p>
+        </div>
+        <div class="parking-spot available">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Available</p>
+        </div>
+        <div class="parking-spot occupied">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Occupied</p>
+        </div>
+        <div class="parking-spot available">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Available</p>
+        </div>
+        <div class="parking-spot occupied">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Occupied</p>
+        </div>
+        <div class="parking-spot available">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Available</p>
+        </div>
+        <div class="parking-spot occupied">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Occupied</p>
+        </div>
+        <div class="parking-spot available">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Available</p>
+        </div>
+        <div class="parking-spot occupied">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Occupied</p>
+        </div>
+        <div class="parking-spot available">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Available</p>
+        </div>
+        <div class="parking-spot occupied">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Occupied</p>
+        </div>
+        <div class="parking-spot available">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Available</p>
+        </div>
+        <div class="parking-spot occupied">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Occupied</p>
+        </div>
+        <div class="parking-spot available">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Available</p>
+        </div>
+        <div class="parking-spot occupied">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Occupied</p>
+        </div>
+        <div class="parking-spot available">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Available</p>
+        </div>
+        <div class="parking-spot occupied">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Occupied</p>
+        </div>
+        <div class="parking-spot available">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Available</p>
+        </div>
+        <div class="parking-spot occupied">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Occupied</p>
+        </div>
+        <div class="parking-spot available">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Available</p>
+        </div>
+        <div class="parking-spot occupied">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Occupied</p>
+        </div>
+        <div class="parking-spot available">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Available</p>
+        </div>
+        <div class="parking-spot occupied">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Occupied</p>
+        </div>
+        <div class="parking-spot available">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Available</p>
+        </div>
+        <div class="parking-spot occupied">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Occupied</p>
+        </div>
+        <div class="parking-spot available">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Available</p>
+        </div>
+        <div class="parking-spot occupied">
+            <div class="spot-title">Parking Area</div>
+            <p>Status: Occupied</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Simulating real-time parking status update
+    function updateParkingStatus() {
+        const spots = document.querySelectorAll('.parking-spot');
+        const status = ['available', 'occupied']; // Random status
+        
+        spots.forEach(spot => {
+            const randomStatus = status[Math.floor(Math.random() * status.length)];
+            const spotTitle = spot.querySelector('.spot-title').innerText;
+
+            if (randomStatus === 'available') {
+                spot.classList.remove('occupied');
+                spot.classList.add('available');
+                spot.querySelector('p').innerText = `Status: Available`;
+            } else {
+                spot.classList.remove('available');
+                spot.classList.add('occupied');
+                spot.querySelector('p').innerText = `Status: Occupied`;
+            }
+
+            console.log(`Updated status for ${spotTitle} to ${randomStatus}`);
+        });
+    }
+
+    // Automatically refresh parking status every 2 seconds
+    setInterval(updateParkingStatus, 10000); // 2000 milliseconds = 2 seconds
+    const selectedOption = localStorage.getItem("selectedOption"); // Retrieve data from local storage
+    if (selectedOption) {
+      document.getElementById("display").textContent = selectedOption;
+    } else {
+      document.getElementById("display").textContent = "No option selected.";
+    }
+
+    setTimeout(() => {
+    window.location.href = 'LIL.html'; // Replace with your target URL
+  }, 120000); // 120 seconds
+    
+</script>
+
+</body>
+</html>

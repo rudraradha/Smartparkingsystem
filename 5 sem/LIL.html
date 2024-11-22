@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Smart parking system user interface</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0056b3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      width: 70%;
+      max-width: 800px;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #333;
+      text-align: center;
+      font-family: Agency FB;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .column {
+      width: 48%;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .display-area {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      border: 2.5px solid #7272f5;
+    }
+
+    .info {
+      font-size: 1.1rem;
+      color: #555;
+      align-items: center;
+      
+    }
+    select, button {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    
+
+  </style>
+</head>
+<body>
+ 
+  <div class="container">
+    <h1>SMART PARKING SYSTEM USER INTERFACE</h1>
+
+    <div class="row">
+      <!-- Dropdown Menu -->
+      <div class="column">
+        <label for="data-selector" style="font-family:Agency FB ;">--Pick a mall close to you in Chennai--</label>
+        <select id="data-selector" onchange="updateData()" style="font-family:Agency FB ;">
+          <option value=""style="font-family:Agency FB ;">-- Select--</option>
+          <option value="Phoenix MarketCity (Velachery)"style="font-family:Agency FB ;">Phoenix MarketCity (Velachery)</option>
+          <option value="Express Avenue (Royapettah)"style="font-family:Agency FB ;">Express Avenue (Royapettah)</option>
+          <option value="VR Chennai (Anna Nagar)"style="font-family:Agency FB ;">VR Chennai (Anna Nagar)</option>
+          <option value="Chennai Citi Centre (Mylapore)"style="font-family:Agency FB ;">Chennai Citi Centre (Mylapore)</option>
+          <option value="Forum Vijaya Mall (Vadapalani)"style="font-family:Agency FB ;">Forum Vijaya Mall (Vadapalani)</option>
+        </select>
+        <button onclick="saveData()" style="font-family:Agency FB ; font-size: 20px;"><i class="fa fa-search" aria-hidden="true" style="font-size: 20px;"></i>
+              Search for an vacancy</button>
+      </div>
+
+      <!-- Display Area -->
+      <div class="column">
+        <div id="display-area" class="display-area" style="font-family:Agency FB ;">
+          <p class="info">--Select--</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Data to display based on selected option
+    const data = {
+      "Phoenix MarketCity (Velachery)": "Phoenix MarketCity (Velachery)",
+      "Express Avenue (Royapettah)": "Express Avenue (Royapettah)",
+      "VR Chennai (Anna Nagar)": "VR Chennai (Anna Nagar)",
+      "Chennai Citi Centre (Mylapore)": "Chennai Citi Centre (Mylapore)",
+      "Forum Vijaya Mall (Vadapalani)": "Forum Vijaya Mall (Vadapalani)"
+    };
+
+    // Function to update the display based on dropdown selection
+    function updateData() {
+      const selectedValue = document.getElementById("data-selector").value;
+      const displayArea = document.getElementById("display-area");
+
+      if (selectedValue) {
+        displayArea.innerHTML = `<p class="info">${data[selectedValue]}</p>`;
+      } else {
+        displayArea.innerHTML = '<p class="info">Please select an option to see the information.</p>';
+      }
+    }
+    function saveData() {
+      const selectedOption = document.getElementById("data-selector").value;
+      localStorage.setItem("selectedOption", selectedOption); // Save data in local storage
+      window.location.href = "home.html"; // Redirect to the second page
+    }
+  </script>
+
+</body>
+</html>
